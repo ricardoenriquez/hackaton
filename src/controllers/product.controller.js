@@ -65,7 +65,7 @@ async function updateProduct(req, res) {
     product.update({
         tenant_id, name, description, list_price
     });
-    product.json({
+    res.json({
         message: 'Producto Actualizado',
         data: product
     });
