@@ -4,8 +4,9 @@ var ProductCrud = require('../controllers/product.controller');
 
 
 // /api/user/
+router.get('/:name', ProductCrud.getByName);
 router.get('/', ProductCrud.getAllProducts);
-router.get('/:id', ProductCrud.getOne);
+//router.get('/:id', ProductCrud.getOne);
 router.post('/', ProductCrud.createProduct);
 router.delete('/:id', ProductCrud.deleteProduct);
 router.put('/:id', ProductCrud.updateProduct);

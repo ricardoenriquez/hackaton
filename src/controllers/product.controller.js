@@ -1,5 +1,18 @@
 var Product = require('../model/Product');
 
+async function getByName(req, res) {
+    var { name } = req.params;
+
+    var product = await Product.findAll({
+        where: {
+            name
+        }
+    });
+    if (product) {
+        res.json(product);
+    }
+}
+
 async function getAllProducts(req, res) {
     var products = await Product.findAll();
     res.json(products
@@ -71,4 +84,4 @@ async function updateProduct(req, res) {
     });
 }
 
-module.exports = { createProduct, getAllProducts, getOne, deleteProduct, updateProduct };
+module.exports = { createProduct, getAllProducts, getOne, deleteProduct, updateProduct, getByName };
