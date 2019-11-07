@@ -15,8 +15,7 @@ async function getByName(req, res) {
 
 async function getAllProducts(req, res) {
     var products = await Product.findAll();
-    res.json(products
-    )
+    res.json(products)
 }
 
 async function getOne(req, res) {
